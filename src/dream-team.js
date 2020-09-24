@@ -1,9 +1,13 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function createDreamTeam(members) {
-  if (members === null || members === undefined || members === NaN) {
+  function isNan(value) {
+    return value !== value;
+  }
+  if (members === null || members === undefined || isNan(members)) {
     return false;  
-  }  if (members.constructor !== Array) {
+  }  
+  if (members.constructor !== Array) {
     return false;  
   }
   let array = members.filter(item => typeof(item) === 'string');
