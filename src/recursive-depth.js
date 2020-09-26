@@ -19,7 +19,6 @@ module.exports = class DepthCalculator {
        }
       });
       this.max = Math.max(depth, this.max);
-      console.log(`depth=${depth} max=${this.max}`);
       depth = depth - 1;
       return this.max;
    }
